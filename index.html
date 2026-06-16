@@ -1,10 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Rust-Mini Community</title>
+
+<style>
+body{
+    margin:0;
+    background:#1b1b1b;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
+}
+
+/* Banner */
+.banner{
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    display:block;
+}
+
+/* Main header section */
+.header{
+    padding:30px 20px;
+}
+
+/* Discord button */
+.button{
+    background:#d96b27;
+    color:white;
+    padding:12px 22px;
+    text-decoration:none;
+    border-radius:6px;
+    display:inline-block;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.button:hover{
+    background:#ff7a2f;
+}
+
+/* Server status box */
+.status{
+    margin-top:30px;
+    padding:20px;
+    background:#222;
+    display:inline-block;
+    border-radius:8px;
+    min-width:200px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Banner -->
+<img src="banner.jpg" class="banner">
+
+<!-- Main Info -->
 <div class="header">
     <h1>RUST-MINI</h1>
     <h3>Community Survival Server</h3>
 
-    <p>⚔️ Vanilla-style | Weekly Action | Active Admins</p>
+    <p>⚔️ Vanilla-style | Active Admins | Weekly Action</p>
 
     <p><b>Connect:</b> YOUR_IP:28015</p>
 
@@ -12,28 +74,14 @@
         Join Discord
     </a>
 </div>
-<body>
-<img src="banner.jpg" style="width:100%; max-height:500px; object-fit:cover;">
-<div class="header">
-    <h1>RUST-MINI</h1>
-    <h2>Community Rust Server</h2>
 
-    <p>Vanilla Rust Designed for Workers</p>
-
-    <p>Connect:
-    YOUR_IP:28015
-    </p>
-
-    <a class="button" href="#">
-    Join Discord
-    </a>
-</div>
-
+<!-- Server Status -->
 <h2>Server Status</h2>
 
-<div id="players">
-Loading...
+<div class="status">
+    <div id="players">Loading players...</div>
 </div>
 
 </body>
+
 </html>
