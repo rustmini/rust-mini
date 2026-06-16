@@ -78,9 +78,31 @@ body{
 <!-- Server Status -->
 <h2>Server Status</h2>
 
-<div class="status">
-    <div id="players">Loading players...</div>
-</div>
+<div id="players">Loading players...</div>
+
+<script>
+const serverID = "38725790";
+
+async function loadPlayers() {
+    try {
+        const res = await fetch(`https://api.battlemetrics.com/servers/${serverID}`);
+        const data = await res.json();
+
+        const players = data.data.attributes.players;
+        const max = data.data.attributes.maxPlayers;
+
+        document.getElementById("players").innerHTML =
+            `🟢 ${players} / ${max} Players Online`;
+
+    } catch (err) {
+        document.getElementById("players").innerHTML =
+            "⚠️ Unable to load player count";
+    }
+}
+
+loadPlayers();
+setInterval(loadPlayers, 30000);
+</script>
 
 </body>
 
