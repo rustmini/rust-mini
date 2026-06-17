@@ -3,13 +3,13 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Rust-Mini | Monthly</title>
+<title>Rust Mini | Monthly Wipe Server</title>
 
 <style>
 body{
     margin:0;
-    background:#1b1b1b;
-    color:white;
+    background:#141414;
+    color:#fff;
     font-family:Arial, sans-serif;
 }
 
@@ -21,19 +21,20 @@ body{
     display:block;
 }
 
-/* Layout wrapper */
+/* Layout */
 .container{
-    max-width:1100px;
+    max-width:1000px;
     margin:0 auto;
     padding:20px;
 }
 
-/* Sections (Rust-style panels) */
+/* Panels */
 .panel{
-    background:#222;
+    background:#1f1f1f;
     padding:20px;
     margin-top:20px;
-    border-radius:8px;
+    border-radius:10px;
+    border:1px solid #2a2a2a;
 }
 
 /* Headings */
@@ -41,7 +42,7 @@ h1,h2,h3{
     margin:10px 0;
 }
 
-/* Discord button */
+/* Button */
 .button{
     background:#d96b27;
     color:white;
@@ -61,6 +62,13 @@ h1,h2,h3{
 .status{
     font-size:18px;
 }
+
+/* Code style */
+code{
+    background:#000;
+    padding:4px 6px;
+    border-radius:4px;
+}
 </style>
 
 </head>
@@ -70,12 +78,14 @@ h1,h2,h3{
 <!-- Banner -->
 <img src="banner.jpg" class="banner">
 
-<!-- Main Info -->
-<div class="header">
-    <h1>RUST Mini | Monthly</h1>
-    <h3>Designed for Workers</h3>
+<div class="container">
 
-    <p> Vanilla-style | Active Non Player Admin | Monthly Full Wipes</p>
+<!-- Header -->
+<div class="panel">
+    <h1>RUST MINI</h1>
+    <h3>Monthly Wipe Survival Server</h3>
+
+    <p>Vanilla-style | Active Admins | Balanced Gameplay</p>
 
     <p><b>Connect:</b> <code>client.connect 123.45.67.89:28015</code></p>
 
@@ -84,11 +94,21 @@ h1,h2,h3{
     </a>
 </div>
 
-<!-- Server Status -->
-<h2>Server Status</h2>
+<!-- Player Count -->
+<div class="panel">
+    <h2>Server Status</h2>
+    <div id="players" class="status">Loading players...</div>
+</div>
 
-<div id="players">Loading players...</div>
+<!-- Map -->
+<div class="panel">
+    <h2>Latest Map</h2>
+    <img src="map.jpg" style="width:100%; border-radius:8px;">
+</div>
 
+</div>
+
+<!-- Player Script -->
 <script>
 const serverID = "38725790";
 
@@ -114,5 +134,4 @@ setInterval(loadPlayers, 30000);
 </script>
 
 </body>
-
 </html>
