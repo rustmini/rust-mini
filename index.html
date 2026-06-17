@@ -11,7 +11,6 @@ body{
     background:#1b1b1b;
     color:white;
     font-family:Arial, sans-serif;
-    text-align:center;
 }
 
 /* Banner */
@@ -22,16 +21,31 @@ body{
     display:block;
 }
 
-/* Main header section */
-.header{
-    padding:30px 20px;
+/* Layout wrapper */
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:20px;
+}
+
+/* Sections (Rust-style panels) */
+.panel{
+    background:#222;
+    padding:20px;
+    margin-top:20px;
+    border-radius:8px;
+}
+
+/* Headings */
+h1,h2,h3{
+    margin:10px 0;
 }
 
 /* Discord button */
 .button{
     background:#d96b27;
     color:white;
-    padding:12px 22px;
+    padding:12px 20px;
     text-decoration:none;
     border-radius:6px;
     display:inline-block;
@@ -43,14 +57,9 @@ body{
     background:#ff7a2f;
 }
 
-/* Server status box */
+/* Status text */
 .status{
-    margin-top:30px;
-    padding:20px;
-    background:#222;
-    display:inline-block;
-    border-radius:8px;
-    min-width:200px;
+    font-size:18px;
 }
 </style>
 
