@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>Rust Mini | Monthly Wipe Server</title>
+
+<style>
+    .nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+.nav a:hover{
+    color:#d96b27;
+}
+body{
+    margin:0;
+    background:#141414;
+    color:#fff;
+    font-family:Arial, sans-serif;
+}
+
+/* Banner */
+.banner{
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    display:block;
+}
+
+/* Layout */
+.container{
+    max-width:1000px;
+    margin:0 auto;
+    padding:20px;
+}
+
+/* Panels */
+.panel{
+    background:#1f1f1f;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    border:1px solid #2a2a2a;
+}
+
+/* Headings */
+h1,h2,h3{
+    margin:10px 0;
+}
+
+/* Button */
+.button{
+    background:#d96b27;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:6px;
+    display:inline-block;
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.button:hover{
+    background:#ff7a2f;
+}
+
+/* Status text */
+.status{
+    font-size:18px;
+}
+
+/* Code style */
+code{
+    background:#000;
+    padding:4px 6px;
+    border-radius:4px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Banner -->
+<img src="banner.jpg" class="banner">
+
+<div class="container">
+<div class="nav">
+    <a href="index.html">Home</a>
+    <a href="server-info.html">Server Info</a>
+    <a href="rules.html">Rules</a>
+    <a href="faq.html">FAQ</a>
+    <a href="leaderboard.html">LeaderBoard</a>
+</div>
+
+<!-- start server events -->
+
+<div class="panel">
+    <h1>Events Infomation</h1>
+
+    <p>
+• Plane Crash is a rare event and is triggered every 2 - 3 hrs. After the Cargo plane crashes NPC's will protect the loot for 20 minutes.    
+    </p>
+</div>
+    
+<!-- end server events -->
+       
+    <div class="panel">
+    <p><h1>Raiding</h1></p>
+    </p>
+    <p>To focus more on PvP and Online Raiding, players are limited to 1x offline raid every 24 hrs. 
+        When you start an offline raid your UI will trigger to 1/1 on the bottom right of your screen. 
+        You will be locked out of any other offline raiding for 24hrs.</p>
+    <p>This setting also helps to prevent people from being online 24/7 raiding the entire server while players are at work.</p>
+    <p>The previous rule of no griefing has been lifted. 
+    If you raid a base, you can now take the base over. Use it, seal it and let it decay it's up to you and just treated as game play.</p>
+    </div>
+    <!----------------------------------------------------->
+    
+     <div class="panel">
+    <p><h1>Events</h1></p>
+    <p>Vanilla event times are normal.</p>
+    <p>Additional Custom Events, Plane Crash & Monument Bradley are dynamic between 1 to 3 hr spawn times.</p>
+    </div>
+    <!----------------------------------------------------->
+    
+    <div class="panel">
+    <p><h1>Admins</h1></p>
+    <p>There are no playing admins or moderators on this server — none, zero.</p>
+
+    <p>Any connected admin is strictly here for maintenance & monitoring. Admins are adults & permanently invisible in-game, do not play and do not engage with players.
+    </p>
+    <p>If you need assistance, use the in-game commands:</p>
+    <p>
+     • /complain
+     • /suggest
+     </p><p>*Example: /complain I think Mr Player is cheating please check!
+
+<p></p>Messages sent through these commands are reviewed as soon as available.</p>
+</div>
+   <!------------------------------------------------------>
+    
+
+<div class="panel">
+    <h2>Connection Information</h2>
+
+    <p>
+    <code>client.connect 103.62.51.132:28105</code>
+    </p>
+</div>
+
+    <!------------------------------------------------------->
+    
+
+</body>
+</html>
