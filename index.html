@@ -43,7 +43,18 @@ body{
     margin:0 auto;
     padding:20px;
 }
+/* Panel Container */
+    .panel-container {
+    display: flex;
+    gap: 20px;
+}
 
+.panel {
+    flex: 1;
+    background: #222;
+    padding: 20px;
+    border-radius: 10px;
+}
 /* Panels */
 .panel{
     background:#1f1f1f;
@@ -130,12 +141,24 @@ code{
       
 </div>
 <!-- Map -->
-<div class="panel">
-    <h2>Latest Map</h2>
-    <img src="https://content.rustmaps.com/maps/285/9b13f7b6cbf74c449ff27f8cd5fa4162/thumbnail.webp" style="width:300px; height:300px; border-radius:8px;">
+<div class="panel-container">
+    <div class="panel">
+        <h2 style="color: #bf4136;">Maps/h2>
+        <p>Maps</p>
+    
+
+    <div class="panel">
+        <h2>Current Map</h2>
+        <p>Small 2500</p>
+        <img src="https://content.rustmaps.com/maps/285/9b13f7b6cbf74c449ff27f8cd5fa4162/thumbnail.webp" style="width:300px; height:300px; border-radius:8px;">
+    </div>
+</div>
+    <div class="panel">
+    <h2>Next Map</h2>
+    <img src="https://content.rustmaps.com/maps/285/6f5dc27728a144b59c8962b8e867a63d/map_icons.png" style="width:300px; height:300px; border-radius:8px;">
 </div>
 
-</div>
+</div></div>
 
 <!-- Player Script -->
 <script>
