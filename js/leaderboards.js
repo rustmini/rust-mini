@@ -1,1 +1,1 @@
-
+console.log("Leaderboards loaded.");
