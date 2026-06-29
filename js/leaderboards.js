@@ -1,21 +1,38 @@
-let allPlayers = [];
-let currentStat = "PlayersKilled";
+let players = [];
+let currentStat = "PVPKills";
 
 fetch("data/PlayerRanks.json")
-.then(response => response.json())
+.then(r => r.json())
 .then(data => {
 
-    // Convert the JSON into an array of players
-    allPlayers = Object.values(data.Stats);
+    players = Object.values(data.PlayerRankData);
 
-    // Build the dropdown automatically
-    const stats = Object.keys(allPlayers[0].Stats);
+    // Stats to show
+    const stats = [
+        "PVPKills",
+        "Deaths",
+        "KDR",
+        "HeadShots",
+        "PVEKills",
+        "NPCKills",
+        "TimePlayed",
+        "ResourcesGathered",
+        "StructuresBuilt",
+        "StructuresUpgraded",
+        "ItemsCrafted",
+        "ItemsDeployed",
+        "ExplosivesThrown",
+        "HeliKills",
+        "APCKills",
+        "FishCaught"
+    ];
 
     const select = document.getElementById("statSelect");
 
     stats.forEach(stat => {
 
         const option = document.createElement("option");
+
         option.value = stat;
         option.textContent = prettify(stat);
 
@@ -26,21 +43,16 @@ fetch("data/PlayerRanks.json")
 
     });
 
-    // Build the champion list
-    buildTitles(data.Titles);
-
-    // Show first leaderboard
     buildLeaderboard();
 
-    // Events
-    select.addEventListener("change", () => {
+    select.onchange = function(){
 
-        currentStat = select.value;
+        currentStat = this.value;
         buildLeaderboard();
 
-    });
+    };
 
-    document.getElementById("search").addEventListener("input", buildLeaderboard);
+    document.getElementById("search").oninput = buildLeaderboard;
 
 });
 
@@ -48,83 +60,58 @@ function buildLeaderboard(){
 
     const search = document.getElementById("search").value.toLowerCase();
 
-    let players = [...allPlayers];
+    let list = players.filter(player =>
+        player.Name.toLowerCase().includes(search)
+    );
 
-    players.sort((a,b)=>{
-
-        return b.Stats[currentStat]-a.Stats[currentStat];
-
-    });
-
-    players = players.filter(p=>{
-
-        return p.DisplayName.toLowerCase().includes(search);
-
-    });
+    list.sort((a,b)=>
+        Number(b[currentStat] || 0) - Number(a[currentStat] || 0)
+    );
 
     const tbody = document.getElementById("leaderboard");
 
     tbody.innerHTML="";
 
-    players.forEach((player,index)=>{
+    list.forEach((player,index)=>{
 
-        const tr = document.createElement("tr");
+        let rank=index+1;
 
-        let medal = index+1;
+        if(index===0) rank="🥇";
+        else if(index===1) rank="🥈";
+        else if(index===2) rank="🥉";
 
-        if(index===0)
-            medal="🥇";
+        let value = player[currentStat];
 
-        else if(index===1)
-            medal="🥈";
+        if(currentStat==="TimePlayed"){
 
-        else if(index===2)
-            medal="🥉";
+            value = Math.floor(Number(value)/3600) + " hrs";
 
-        tr.innerHTML=`
+        }
+        else{
 
-        <td>${medal}</td>
-        <td>${player.DisplayName}</td>
-        <td>${player.Stats[currentStat].toLocaleString()}</td>
+            value = Number(value || 0).toLocaleString();
 
+        }
+
+        tbody.innerHTML += `
+        <tr>
+            <td>${rank}</td>
+            <td>${player.Status==="online" ? "🟢" : "⚪"} ${player.Name}</td>
+            <td>${value}</td>
+        </tr>
         `;
-
-        tbody.appendChild(tr);
 
     });
 
 }
 
-function buildTitles(titles){
-
-    const div=document.getElementById("titles");
-
-    div.innerHTML="";
-
-    for(const stat in titles){
-
-        const t=titles[stat];
-
-        if(t.Count===0)
-            continue;
-
-        div.innerHTML+=`
-
-        <p>
-        🏆 <b>${prettify(stat)}</b><br>
-        ${t.DisplayName} (${t.Count.toLocaleString()})
-        </p>
-
-        <hr style="border:0;height:1px;background:#333;">
-
-        `;
-
-    }
-
-}
-
 function prettify(text){
 
-    return text.replace(/([A-Z])/g," $1").trim();
+    return text
+        .replace(/([A-Z])/g," $1")
+        .replace("P V P","PVP")
+        .replace("P V E","PVE")
+        .replace("N P C","NPC")
+        .trim();
 
 }
