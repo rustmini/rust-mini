@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
+
+<title>Rust Mini | Leaderboards</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#141414;
+    color:#fff;
+    font-family:Arial,sans-serif;
+}
+
+.banner{
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    display:block;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:20px;
+}
+
+.nav{
+    background:#222;
+    padding:15px;
+    text-align:center;
+}
+
+.nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+}
+
+.nav a:hover{
+    color:#bf4136;
+}
+
+.panel{
+    background:#1f1f1f;
+    border:1px solid #2a2a2a;
+    padding:20px;
+    margin-top:20px;
+}
+
+h1,h2{
+    color:#bf4136;
+}
+
+select,input{
+
+    background:#2b2b2b;
+    color:white;
+    border:1px solid #444;
+    padding:10px;
+    margin:10px 5px 20px 0;
+}
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+
+    background:#bf4136;
+    padding:12px;
+}
+
+td{
+
+    padding:10px;
+    border-bottom:1px solid #333;
+}
+
+tr:hover{
+
+    background:#2a2a2a;
+}
+
+.rank1{
+    color:gold;
+    font-weight:bold;
+}
+
+.rank2{
+    color:silver;
+    font-weight:bold;
+}
+
+.rank3{
+    color:#cd7f32;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<img src="banner.jpg" class="banner">
+
+<div class="container">
+
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="server-info.html">Server Info</a>
+<a href="rules.html">Rules</a>
+<a href="faq.html">FAQ</a>
+<a href="custom-events.html">Custom Events</a>
+<a href="leaderboards.html">Leaderboards</a>
+</div>
+
+<div class="panel">
+
+<h1>Rust Mini Leaderboards</h1>
+
+<input
+type="text"
+id="search"
+placeholder="Search player...">
+
+<select id="statSelect"></select>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Rank</th>
+<th>Player</th>
+<th>Score</th>
+
+</tr>
+
+</thead>
+
+<tbody id="leaderboard"></tbody>
+
+</table>
+
+</div>
+
+<div class="panel">
+
+<h2>Current Champions</h2>
+
+<div id="titles"></div>
+
+</div>
+
+</div>
+
+<script src="js/leaderboards.js"></script>
+
+</body>
+
+</html>
