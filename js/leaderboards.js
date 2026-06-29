@@ -1,7 +1,7 @@
 let allPlayers = [];
 let currentStat = "PlayersKilled";
 
-fetch("data/challenge_data.json")
+fetch("data/PlayerRanks.json")
 .then(response => response.json())
 .then(data => {
 
